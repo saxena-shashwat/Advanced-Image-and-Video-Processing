@@ -1,0 +1,70 @@
+# =========================
+# MATLAB
+# =========================
+# Autosave and backup files
+*.asv
+*.m~
+*_crash_dump.*
+# Compiled MEX binaries (if you compile C/C++ into MATLAB functions)
+*.mex*
+# Simulink cache and code generation folders (if you use Simulink)
+slprj/
+*.slxc
+# NOTE: .mat files are NOT ignored here by default. 
+# If you are saving massive data matrices, uncomment the line below:
+# *.mat
+
+# =========================
+# PYTHON
+# =========================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+# Virtual Environments
+venv/
+.venv/
+env/
+.env
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# =========================
+# C and C++
+# =========================
+# Compiled Object files
+*.o
+*.ko
+*.obj
+*.elf
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+# Executables
+*.exe
+*.out
+*.app
+# Common build directories (Make/CMake/etc.)
+build/
+bin/
+out/
+Debug/
+Release/
+
+# =========================
+# OS & IDEs (Optional but highly recommended)
+# =========================
+# Mac / Windows clutter
+.DS_Store
+Thumbs.db
+# VS Code / JetBrains / Visual Studio settings
+.vscode/
+.idea/
+*.suo
+*.user
