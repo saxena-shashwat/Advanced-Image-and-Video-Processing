@@ -68,3 +68,7 @@ Thumbs.db
 .idea/
 *.suo
 *.user
+
+
+# personal
+onthego.md
