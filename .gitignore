@@ -72,3 +72,12 @@ Thumbs.db
 
 # personal
 onthego.md
+
+# Latex Auxilary files
+*.aux
+*.fdb_latexmk
+*.log
+*.synctex(busy)
+*.fls
+*.synctex
+*.synctex.gz
