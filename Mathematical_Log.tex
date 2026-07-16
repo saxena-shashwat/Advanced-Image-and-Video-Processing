@@ -23,7 +23,36 @@
 Conventional methods for video compression are based on slicing frames and often lead to temporal discontinuty and poor results in video with motion. This research aims to develop a motion-compensated temporal frame fusion algorithem that reduces frames by integrating information from multiple consecutive frames onto one net frame, thereby preserving information and allowing data reduction.
 
 \section{Mathematical Background}
-Video could be thought of a 3D signal, with the domain being time (\mathbf{R}) and the co-domain being images (\mathbf{R}). At each instance of time, an image is being displayed, an image itself is a signal that maps a 2D space (\mathbf{R^2}) onto light intensity of 3 colors (RGB), (\mathbf{R x R x R})
+Video could be thought of a 3D signal, with the domain being time ($\mathbf{R}$) and the co-domain being images ($\mathbf{R}$). At each instance of time, an image is being displayed, an image itself is a signal that maps a 2D space($\mathbf{R^2}$) onto light intensity of 3 colors (RGB), ($\mathbf{R} \times \mathbf{R} \times \mathbf{R}$)
+
+\subsection{Block Averaging}
+The most simple method to deal with this problem would be to algebraically add and take an average of all the frames in the group, this would result in a reduced framerate but, wouldn't be ideal as it wouldnt compensate for the motion of different objects.
+
+Simple algebraic addition leads to loss of key details in the environment as well which would be important for the depth perception RL model (monocular depth measuring).
+
+
+\subsection{Integration}
+A problem with actual integration is that, unlike real world video, which is a continous time 3D signal, video stored digitally is broken up into frames, hence performing integration isn't possible
+
+\[
+\begin{aligned}
+\text{Let } I \text{ be a 3D signal representing a video,} \\
+I(x, y, t): & \mathbf{R^2} \times \mathbf{R} \rightarrow \mathbf{R} \\
+\text{To average the first one second, } \\
+\int_{0}^{1} I(x, y, t) & \, dt  \\
+\end{aligned}
+\]
+
+As this integration is not possible with discreet time domain of digital videos, we must convert the integral into its equivalent Reiman Sum (Discreeen Reimann Sum),
+\[
+\begin{aligned}
+\sum_{0}^{1} I(x, y, t) \cdot \triangle t \\
+\triangle t = \frac{1}{\text{fps}} \\
+\end{aligned}
+\]
+
+Hence, the obtained discreet sum is the same as using basic block averaging
+
 
 \section{Notes}
 % Add project notes and equations here.
